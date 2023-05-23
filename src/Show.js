@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { getPosts } from "./redux/features/showSlice";
+import { Link } from "react-router-dom";
 
 export default function Show(){
     const state =useSelector((state)=>state?.post?.users?.list);
@@ -13,6 +14,9 @@ export default function Show(){
     return(
     <div className="container-fluid">
        
+       <Link to='Add'>
+        <button>ADD</button>
+       </Link>
    
    
     <table class="table table-dark">

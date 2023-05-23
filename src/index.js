@@ -1,15 +1,27 @@
 import React from "react";
 import  {createRoot}  from "react-dom/client";
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Show from "./Show";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+ import Add from "./Add"
 const rootElement = document.getElementById("root") ;
 const root=createRoot(rootElement);
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-   <Show/>
+   <BrowserRouter>
+   <Routes>
+<Route path="/" element={<Show/>}/>
+<Route path="/Add" element={<Add/>}/>
+
+   </Routes>
+   
+   
+   </BrowserRouter>
+   
+   
    </Provider>
     </React.StrictMode>
 );
