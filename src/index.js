@@ -6,6 +6,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import store from "./redux/store";
  import Add from "./Add"
+import Update from "./Update";
 const rootElement = document.getElementById("root") ;
 const root=createRoot(rootElement);
 root.render(
@@ -15,13 +16,9 @@ root.render(
    <Routes>
 <Route path="/" element={<Show/>}/>
 <Route path="/Add" element={<Add/>}/>
-
+<Route path="/edit/:id" element={<Update/>}/>
    </Routes>
-   
-   
    </BrowserRouter>
-   
-   
    </Provider>
     </React.StrictMode>
 );
